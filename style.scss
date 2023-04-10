@@ -1,0 +1,185 @@
+@use "sass:color";
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+/*
+## Colors
+
+### Primary
+
+Dark cyan: hsl(185, 75%, 39%)
+Very dark desaturated blue: hsl(229, 23%, 23%)
+Dark grayish blue: hsl(227, 10%, 46%)
+
+### Neutral
+
+Dark gray: hsl(0, 0%, 59%)
+
+## Typography
+
+### Body Copy
+
+- Font size (name and stats): 18px
+
+### Font
+
+- Family: [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans)
+- Weights: 400, 700
+*/
+$dark-cyan: hsl(185, 75%, 39%);
+$very-dark-desaturated-blue: hsl(229, 23%, 23%);
+$dark-grayish-blue: hsl(227, 10%, 46%);
+$dark-gray: hsl(0, 0%, 59%);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul {
+    list-style-type: none;
+}
+img {
+    display: block;
+}
+
+html {
+    font-size: 18px;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    background: url(images/bg-pattern-top.svg) no-repeat -300px -500px, url(images/bg-pattern-bottom.svg) no-repeat 700px 370px;
+    background-color: $dark-cyan;
+    color: $dark-gray;
+}
+
+
+main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1.5rem 1.5rem;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-weight: 400;
+    color: $dark-gray;
+}
+strong {
+    font-weight: 700;
+    color: $very-dark-desaturated-blue;
+}
+
+
+article.profile-card {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    overflow: hidden;
+    background: url(images/bg-pattern-card.svg) no-repeat;
+    background-color: white;
+    padding-top: 5rem;
+    text-align: center;
+    box-shadow: 1rem 1rem 50px hsl(0, 0%, 0%, 0.2);
+
+    hr {
+        width: 100%;
+        border: none;
+        border-top: 1px solid color.adjust($dark-gray, $alpha: -0.8);
+    }
+}
+
+img.profile-pic {
+    width:105px;
+    height: auto;
+    display: inline-block;
+    border: 5px solid white;
+    border-radius: 96px;
+    margin-bottom: 1rem;
+}
+
+div.personal-data {
+    margin-bottom: 1.3rem;
+    div.personal-data-main {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 0.4rem;
+
+        p.user-name {
+            color: $very-dark-desaturated-blue;
+            font-weight: 700;
+        }
+    }
+
+    p.user-city {
+        font-size: 0.8rem;
+    }
+
+}
+
+ul.social-data-container {
+    display: flex;
+    width: 100%;
+    padding: 1.5rem;
+
+    & > * {
+        flex: 1;
+    }
+
+    li {
+        text-align: center;
+        p.social-data {
+            font-size: 0.5rem;
+            letter-spacing: 0.1rem;
+        }
+
+        strong {
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 0.2rem;
+            letter-spacing: 0.5px;
+        }
+    }
+}
+
+
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+
+    a {
+        color: hsl(228, 45%, 44%);
+    }
+}
+
+@media screen and (max-width: 600px){
+    body {
+        background: url(images/bg-pattern-top.svg) no-repeat -750px -600px, url(images/bg-pattern-bottom.svg) no-repeat 150px 250px;
+        background-color: $dark-cyan;
+
+    }
+    main {
+        padding-top: 1.5rem;
+    }
+    article.profile-card {
+        max-width: 350px;
+        width: 100%;
+    }
+}
